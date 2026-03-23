@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git || Hub || Page</title>
+  <link rel="shortcut icon" href="./english-janala-resources/assets/logo.png" type="image/x-icon">
+  
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- tailwind + daisyui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <section>
+    <div class="navbar bg-base-100 shadow-sm flex justify-between">
+      <div class="flex items-center justify-between ml-4">
+        <img src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
+        <a class="btn btn-ghost text-xl">GitHub Issues Tracker</a>
+      </div>
+      <div class="flex gap-2 mr-4">
+        <input id="inputForsearch" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+        <div class="dropdown dropdown-end">
+          <div>
+            <button onclick="searchCards()" class="btn btn-primary">+ New Issue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <section class="p-10 flex justify-center items-start">
+    <div class="w-[1140px] h-[88px] shadow-sm flex items-center p-10 justify-start gap-3 rounded-md">
+      <!-- 🔥 FIXED onclick -->
+      <div class="w-[1140px] h-[88px]  flex items-center p-10 justify-start gap-3 rounded-md">
+  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('all')">All</button>
+  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('open')">Open</button>
+  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('closed')">Closed</button>
+</div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="p-10 flex justify-center items-center">
+    <div class="flex items-center shadow-sm w-[1140px] h-[88px] justify-between rounded-md p-5">
+      <div class="flex items-center gap-5">
+        <img src="B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+        <div>
+          <span id="issueCount" class="text-2xl font-bold">0 Issues</span>
+          <p class="text-xl text-gray-300">Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 bg-green-500 text-green-500 rounded-full">1</span>
+        <span class="font-bold text-xl">Open</span>
+        <span class="inline-flex items-center justify-center w-6 h-6 bg-[#A855F7] text-[#A855f7] rounded-full">1</span>
+        <span class="font-bold text-xl">Closed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD CONTAINER -->
+  <section class="grid grid-cols-4 gap-2 w-11/12 mx-auto mr-5" id="AllwordsShwo">
+    <!-- Cards will be appended here -->
+  </section>
+  
+
+  <!-- JS -->
+  <script src="indexmainpage.js"></script>
+</body>
+</html>
