@@ -5,7 +5,7 @@ const BtnToPage = document.getElementById("btn-to-page").addEventListener("click
 
         if (InputUserName === "admin" && InputPassword === "admin123") {
             alert ("Log In Successful");
-            window.location.href = "indexmainpage.html";
+            window.location.href = "main.html";
         }else {
             alert ("Error")
             
