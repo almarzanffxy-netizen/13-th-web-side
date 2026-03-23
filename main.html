@@ -22,63 +22,93 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <section>
-    <div class="navbar bg-base-100 shadow-sm flex justify-between">
-      <div class="flex items-center justify-between ml-4">
-        <img src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
-        <a class="btn btn-ghost text-xl">GitHub Issues Tracker</a>
-      </div>
-      <div class="flex gap-2 mr-4">
-        <input id="inputForsearch" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-        <div class="dropdown dropdown-end">
-          <div>
-            <button onclick="searchCards()" class="btn btn-primary">+ New Issue</button>
-          </div>
-        </div>
-      </div>
+<section>
+  <div class="navbar bg-base-100 shadow-sm flex flex-col md:flex-row justify-between p-2 md:p-4">
+    <div class="flex items-center justify-between w-full md:w-auto mb-2 md:mb-0">
+      <img src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="" class="w-8 md:w-auto">
+      <a class="btn btn-ghost text-xl">GitHub Issues Tracker</a>
     </div>
-  </section>
-
-  <!-- FILTER BUTTONS -->
-  <section class="p-10 flex justify-center items-start">
-    <div class="w-[1140px] h-[88px] shadow-sm flex items-center p-10 justify-start gap-3 rounded-md">
-      <!-- 🔥 FIXED onclick -->
-      <div class="w-[1140px] h-[88px]  flex items-center p-10 justify-start gap-3 rounded-md">
-  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('all')">All</button>
-  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('open')">Open</button>
-  <button class="btn  btn-primary w-30 filter-btn" onclick="filterCards('closed')">Closed</button>
-</div>
-    </div>
-  </section>
-
-  <!-- STATS SECTION -->
-  <section class="p-10 flex justify-center items-center">
-    <div class="flex items-center shadow-sm w-[1140px] h-[88px] justify-between rounded-md p-5">
-      <div class="flex items-center gap-5">
-        <img src="B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+    <div class="flex gap-2 w-full md:w-auto">
+      <input id="inputForsearch" type="text" placeholder="Search" class="input input-bordered w-full lg:w-50 md:w-24" />
+      <div class="dropdown dropdown-end">
         <div>
-          <span id="issueCount" class="text-2xl font-bold">0 Issues</span>
-          <p class="text-xl text-gray-300">Track and manage your project issues</p>
+          <button onclick="searchCards()" class="btn btn-primary w-full md:w-auto">+ New Issue</button>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center justify-center w-6 h-6 bg-green-500 text-green-500 rounded-full">1</span>
-        <span class="font-bold text-xl">Open</span>
-        <span class="inline-flex items-center justify-center w-6 h-6 bg-[#A855F7] text-[#A855f7] rounded-full">1</span>
-        <span class="font-bold text-xl">Closed</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="p-4 md:p-10 flex justify-center items-start">
+  <div class="w-full md:w-[1140px] shadow-sm flex flex-wrap md:flex-nowrap items-center p-4 md:p-10 justify-start gap-2 md:gap-3 rounded-md">
+    <button class="btn btn-primary flex-1 md:flex-none" onclick="filterCards('all')">All</button>
+    <button class="btn btn-primary flex-1 md:flex-none" onclick="filterCards('open')">Open</button>
+    <button class="btn btn-primary flex-1 md:flex-none" onclick="filterCards('closed')">Closed</button>
+  </div>
+</section>
+
+
+
+
+
+<section class="p-4 md:p-10 flex justify-center items-center">
+  <div class="flex flex-col md:flex-row items-center md:justify-between shadow-sm w-full md:w-[1140px] h-auto md:h-[88px] rounded-md p-5 gap-4 md:gap-0">
+    <div class="flex flex-col md:flex-row items-center gap-5">
+      <img src="B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="" class="w-10 md:w-auto">
+      <div class="text-center md:text-left">
+        <span id="issueCount" class="text-2xl font-bold">0 Issues</span>
+        <p class="text-xl text-gray-300">Track and manage your project issues</p>
       </div>
     </div>
-  </section>
+    <div class="flex items-center gap-2">
+      <span class="inline-flex items-center justify-center w-6 h-6 bg-green-500 text-green-500 rounded-full">1</span>
+      <span class="font-bold text-xl">Open</span>
+      <span class="inline-flex items-center justify-center w-6 h-6 bg-[#A855F7] text-[#A855f7] rounded-full">1</span>
+      <span class="font-bold text-xl">Closed</span>
+    </div>
+  </div>
+</section>
 
-  <!-- CARD CONTAINER -->
-  <section class="grid grid-cols-4 gap-2 w-11/12 mx-auto mr-5" id="AllwordsShwo">
-    <!-- Cards will be appended here -->
-  </section>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-11/12 mx-auto" id="AllwordsShwo">
   
+</section>
 
-  <!-- JS -->
+
+<label for="my-modal" class="btn">Open Card</label>
+
+<input type="checkbox" id="my-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box space-y-3">
+    <h3 class="font-bold text-lg">Fix broken image uploads</h3>
+    <p class="py-4"><span class="py-1 p-2 text-white bg-[#00A96E] rounded-full">Opened</span><span>.Opened by Fahim Ahmed</span> <span>22/02/2026</span></p>
+    <button class="btn ${textColor} ${bgColor} rounded-full border px-3 py-1">
+            bug and help need
+          </button>
+          <p class="text-gray-300">like i dont know what i m jfklj</p>
+          <div class="space-y-3 shadow-sm">
+            <div class="flex justify-around items-center">
+              <span>Assignee:</span>
+             <span>Priority:</span>
+            </div>
+            <div class="flex justify-around items-center">
+              <h2 class="text-xl font-bold">like marzan</h2>
+               <button class="btn ${textColor} ${bgColor} rounded-full border px-3 py-1">
+            bug and help need
+          </button>
+            </div>
+          </div>
+    <div class="modal-action">
+      
+      <label for="my-modal" class="btn">Close</label>
+    </div>
+  </div>
+</div>
+<br>
+  
   <script src="indexmainpage.js"></script>
 </body>
 </html>
